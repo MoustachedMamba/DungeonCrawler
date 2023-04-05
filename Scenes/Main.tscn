@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://hywmgltsvxyk"]
+
+[ext_resource type="Texture2D" uid="uid://cxqcodbimyaes" path="res://Sprites/RL Prototype Tileset 32x32.png" id="1_1irhf"]
+[ext_resource type="Script" path="res://Scenes/CollisionListener.gd" id="1_nhrnl"]
+[ext_resource type="PackedScene" uid="uid://dsdfou6jqsc7n" path="res://Scenes/Player.tscn" id="2_oj5te"]
+[ext_resource type="Script" path="res://Scenes/TileReplacer.gd" id="2_slwe5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qah58"]
+resource_name = "Prototype"
+texture = ExtResource("1_1irhf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/custom_data_0 = true
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0/custom_data_1 = true
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0/custom_data_2 = true
+6:3/0 = 0
+6:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_cpcyv"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Wall"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "Door_closed"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "Door_open"
+custom_data_layer_2/type = 1
+sources/1 = SubResource("TileSetAtlasSource_qah58")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_nhrnl")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cpcyv")
+format = 2
+layer_0/tile_data = PackedInt32Array(-196612, 1, 3, -131076, 1, 3, -65540, 1, 3, -4, 1, 3, 65532, 1, 3, 131068, 1, 3, 196604, 1, 3, 262140, 1, 3, 262141, 1, 3, 262142, 1, 3, 262143, 1, 3, 196608, 1, 3, 196609, 1, 3, 196610, 1, 3, 196611, 1, 3, 131075, 1, 3, 65539, 1, 3, 3, 1, 3, -65533, 1, 3, -131069, 1, 3, -196605, 1, 3, -262141, 1, 3, -262142, 1, 3, -262143, 1, 3, -262144, 1, 3, -196609, 1, 3, -196610, 1, 3, -196611, 1, 3, -65538, 1, 3, -131071, 1, 3, 65537, 1, 3, 131070, 1, 3, -131075, 65537, 3, -131074, 65537, 3, -131073, 65537, 3, -196608, 65537, 3, -196607, 65537, 3, -196606, 65537, 3, -65537, 65537, 3, -131072, 65537, 3, -3, 65537, 3, -2, 65537, 3, -1, 65537, 3, -65536, 65537, 3, -65535, 65537, 3, -65534, 65537, 3, 2, 65537, 3, 1, 65537, 3, 0, 65537, 3, 65535, 65537, 3, 65534, 65537, 3, 65533, 65537, 3, 196605, 65537, 3, 196606, 65537, 3, 196607, 65537, 3, 131072, 65537, 3, 131073, 65537, 3, 131074, 65537, 3, 131071, 65537, 3, 65536, 65537, 3, -65539, 262145, 3, 131069, 262145, 3, -131070, 327681, 3, 65538, 327681, 3)
+script = ExtResource("2_slwe5")
+
+[node name="Player" parent="." instance=ExtResource("2_oj5te")]

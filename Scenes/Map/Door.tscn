@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbffb4iky3o2k"]
+
+[ext_resource type="Texture2D" uid="uid://cxqcodbimyaes" path="res://Sprites/RL Prototype Tileset 32x32.png" id="1_et6q0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1038"]
+size = Vector2(31, 31)
+
+[node name="Door" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_q1038")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_et6q0")
+hframes = 8
+vframes = 4
+frame = 28
