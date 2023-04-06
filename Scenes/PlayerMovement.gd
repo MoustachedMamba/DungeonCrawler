@@ -6,6 +6,8 @@ signal collision_event(actor, type)
 @onready var ray = $RayCast2D
 
 var tile_size = 32
+var animation_speed = 3
+var moving = false
 var inputs = {
 	"right": Vector2.RIGHT,
 	"left": Vector2.LEFT,
@@ -22,10 +24,6 @@ func _ready():
 	collision_event.connect(main_node.onCollisionEvent)
 
 
-func _process(delta):
-	pass
-
-
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
@@ -37,6 +35,8 @@ func move(dir):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size
+		print("Moving")
 	else:
 		var obj = ray.get_collider()
-		collision_event.emit(self, self, "walk_in")
+		collision_event.emit(self, obj, "walk_in")
+		print("Not moving")

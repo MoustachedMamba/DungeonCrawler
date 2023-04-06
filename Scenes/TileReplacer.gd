@@ -6,7 +6,6 @@ var floor_tile = Vector2i(1, 3)
 @export var TILE_SCENES := {
 	"Wall" = [preload("res://Scenes/Map/Wall.tscn"), [0, 3]],
 	"Door_closed" = [preload("res://Scenes/Map/Door.tscn"), [4, 3]],
-	"Door_open" = [preload("res://Scenes/Map/Door.tscn"), [5, 3]]
 }
 
 
@@ -25,6 +24,7 @@ func _replace_tiles_with_scenes(scene_dict: Dictionary = TILE_SCENES):
 
 func _replace_tile_with_object(tile_pos: Vector2, object_scene: PackedScene, parent: Node = get_tree().current_scene):
 	set_cell(0, tile_pos, 1, floor_tile)
+	print("Replaced tile at " + str(tile_pos) + " with " + str(object_scene.resource_name))
 	
 	if object_scene:
 		var obj = object_scene.instantiate()
